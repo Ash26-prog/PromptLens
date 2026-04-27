@@ -2,7 +2,7 @@
 // Uses chrome.identity + Firebase Auth REST API
 // No Firebase SDK needed — pure REST calls
 
-const FIREBASE_API_KEY = "AIzaSyCBVXxtJoxE5rYXiHY7nGm3M20hGdqGzT0";
+const FIREBASE_API_KEY = "AIzaSyCQpfo6qQZ7YzDlJt5NZqUAnAW4UKq2v4M";
 const FIREBASE_PROJECT = "promptlens-ae5f3";
 const AUTH_TOKEN_TIMEOUT_MS = 15000;
 
