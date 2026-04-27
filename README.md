@@ -1,6 +1,6 @@
 1. Main idea/theme-
 
-PromptLens is a Chrome extension that enhances user prompts in real-time across AI platforms like ChatGPT, Gemini,Claude etc. It transforms low-quality prompts into optimized, high-quality prompts while explaining the improvements, helping users learn prompt engineering via explaination.
+PromptLens is a Chrome extension that enhances user prompts in real-time across AI platforms like ChatGPT, Gemini,Claude etc. It transforms low-quality prompts into optimized, high-quality prompts while explaining the improvements, helping users learn prompt engineering via explanation.
 
 
 2.Features-
