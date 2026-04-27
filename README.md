@@ -41,10 +41,11 @@ REST APIs
 5. Security Notes-
 a) Firebase API key is restricted to required APIs only  
 b)Firestore access is controlled via authentication rules  
-c)No sensitive credentials are exposed beyond standard client configuration  
+c) OAuth Client ID is restricted to required scopes in Google Cloud Console. API key is user-supplied and stored locally in chrome.storage (prototype trade-off,a production build would route through a backend proxy).
+d) Current version uses broad host permissions for prototype to cover across various AI platforms. The production release would support specific domains only .
 
 
-6. Installation process-
+7. Installation process-
 
 a) Clone the repository
 ```bash
