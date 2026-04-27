@@ -1,30 +1,92 @@
-# PromptLens (Chrome Extension)
+1. Main idea/theme
 
-## Fixing Google sign-in (`bad client id`)
+PromptLens is a Chrome extension that enhances user prompts in real-time across AI platforms like ChatGPT, Gemini,Claude etc. It transforms low-quality prompts into optimized, high-quality prompts while explaining the improvements, helping users learn prompt engineering via explaination.
 
-This extension uses `chrome.identity.getAuthToken()` for Google sign-in. That API **only works** when `manifest.json` has an OAuth Client ID that is configured for **your extension's ID**.
 
-### 1) Get your Extension ID
+## 🌟 Features
 
-1. Open `chrome://extensions`
-2. Enable **Developer mode**
-3. Find **PromptLens** and copy the **Extension ID**
+- ⚡ One-click prompt refinement  
+- 🧠 AI-powered optimization using Google Gemini  
+- 📊 Prompt quality scoring  
+- 📖 Clear explanation of improvements  
+- 🔁 Real-time feedback loop for learning  
+- 🔐 Secure authentication using Firebase  
 
-### 2) Create the correct OAuth Client ID
+---
 
-In Google Cloud Console (the same project that owns your Firebase project):
+## 🧩 How It Works
 
-1. Go to **APIs & Services -> Credentials**
-2. **Create Credentials -> OAuth client ID**
-3. Choose **Application type: Chrome Extension** (in some consoles this is named **Chrome App**)
-4. Set **Application ID / Item ID** to the Extension ID from step 1
-5. Copy the generated **Client ID**
+1. User enters a prompt in an AI tool  
+2. PromptLens analyzes the input  
+3. Applies structured prompt engineering principles  
+4. Sends request to Gemini API  
+5. Generates:
+   - Refined prompt  
+   - Quality score  
+   - Explanation  
+6. Displays output instantly to the user  
 
-### 3) Update `manifest.json`
+---
 
-Replace `oauth2.client_id` in `manifest.json` with the new Client ID, then reload the extension in `chrome://extensions`.
+## 🏗️ Tech Stack
 
-### Notes for local development
+### Frontend
+- Chrome Extension (JavaScript, HTML, CSS)
 
-- If you load the extension unpacked from a different folder (or a copied folder), Chrome may assign a different Extension ID, which requires creating a new OAuth Client ID for that new ID.
-- Alternatively, you can keep a stable Extension ID by packing the extension with the same key, but **don't commit private keys** to the repo.
+### Backend
+- Firebase (Authentication & Firestore)
+
+### AI Layer
+- Google Gemini API
+
+### Integration
+- Chrome Identity API  
+- REST APIs  
+
+---
+
+## 🔐 Security Notes
+
+- Firebase API key is restricted to required APIs only  
+- Firestore access is controlled via authentication rules  
+- No sensitive credentials are exposed beyond standard client configuration  
+
+---
+
+## 📦 Installation
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/Ash26-prog/PromptLens.git
+cd PromptLens
+2. Load extension in Chrome
+Go to chrome://extensions/
+Enable Developer Mode
+Click Load unpacked
+Select the project folder
+▶️ Usage
+Open any AI platform (ChatGPT, Gemini, etc.)
+Type a prompt
+Click Refine using PromptLens
+View:
+Improved prompt
+Score
+Explanation
+🔮 Future Improvements
+Personalized prompt suggestions
+Multi-language support
+Integration with IDEs
+Advanced analytics and user insights
+Support for multiple AI models
+📌 Project Goal
+
+To bridge the gap between AI capability and user skill by making prompt engineering intuitive, accessible, and learnable through real-time usage.
+
+👤 Author
+
+Ash M
+GitHub: https://github.com/Ash26-prog
+
+📄 License
+
+This project is for educational and prototype purposes.
