@@ -1,92 +1,87 @@
-1. Main idea/theme
+1. Main idea/theme-
 
 PromptLens is a Chrome extension that enhances user prompts in real-time across AI platforms like ChatGPT, Gemini,Claude etc. It transforms low-quality prompts into optimized, high-quality prompts while explaining the improvements, helping users learn prompt engineering via explaination.
 
 
-## 🌟 Features
+2.Features-
 
-- ⚡ One-click prompt refinement  
-- 🧠 AI-powered optimization using Google Gemini  
-- 📊 Prompt quality scoring  
-- 📖 Clear explanation of improvements  
-- 🔁 Real-time feedback loop for learning  
-- 🔐 Secure authentication using Firebase  
+a)One-click prompt refinement  
+b) AI-powered optimization using Google Gemini(Groq for quick testing)
+c) Prompt quality scoring  
+d) Clear explanation for improvements  
+e) Real-time feedback based on 10 modern prompting principles 
+f) Secure authentication using Firebase  
 
----
+3. Working-
 
-## 🧩 How It Works
+a) User enters a prompt in an AI tool  
+b) PromptLens analyzes the input  
+c) Applies structured prompt engineering principles and refines it with the help of it's own engine 
+d) Following this, it sends request to Gemini API  
+e) Output-
+   e.1) Refined prompt  
+   e.2) Quality score  
+   e.3)Explanation  
 
-1. User enters a prompt in an AI tool  
-2. PromptLens analyzes the input  
-3. Applies structured prompt engineering principles  
-4. Sends request to Gemini API  
-5. Generates:
-   - Refined prompt  
-   - Quality score  
-   - Explanation  
-6. Displays output instantly to the user  
+4. TechStack-
 
----
+a) Frontend-
+Chrome Extension-JavaScript, HTML, CSS
 
-## 🏗️ Tech Stack
+b) Backend-
+Firebase (Authentication & Firestore for storing user feedback)
 
-### Frontend
-- Chrome Extension (JavaScript, HTML, CSS)
+c) AI Layer-
+Google Gemini API
 
-### Backend
-- Firebase (Authentication & Firestore)
+d) Integration-
+Chrome Identity API  
+REST APIs  
 
-### AI Layer
-- Google Gemini API
+5. Security Notes-
+a) Firebase API key is restricted to required APIs only  
+b)Firestore access is controlled via authentication rules  
+c)No sensitive credentials are exposed beyond standard client configuration  
 
-### Integration
-- Chrome Identity API  
-- REST APIs  
 
----
+6. Installation process-
 
-## 🔐 Security Notes
-
-- Firebase API key is restricted to required APIs only  
-- Firestore access is controlled via authentication rules  
-- No sensitive credentials are exposed beyond standard client configuration  
-
----
-
-## 📦 Installation
-
-### 1. Clone the repository
+a) Clone the repository
 ```bash
 git clone https://github.com/Ash26-prog/PromptLens.git
 cd PromptLens
-2. Load extension in Chrome
-Go to chrome://extensions/
-Enable Developer Mode
-Click Load unpacked
-Select the project folder
-▶️ Usage
-Open any AI platform (ChatGPT, Gemini, etc.)
-Type a prompt
-Click Refine using PromptLens
-View:
-Improved prompt
-Score
-Explanation
-🔮 Future Improvements
-Personalized prompt suggestions
-Multi-language support
-Integration with IDEs
-Advanced analytics and user insights
-Support for multiple AI models
-📌 Project Goal
 
+b) Load extension in Chrome
+b.1) Go to chrome://extensions/
+b.2) Enable Developer Mode
+b.3) Click Load unpacked
+b.4) Select the project folder
+b.5) Pin the extension
+b.6) Add your Gemini API key
+
+7. Usage-
+7.1) Open any AI platform (ChatGPT, Gemini, etc.)
+7.2) Type a prompt
+7.3) Select entire text using- Ctrl+A 
+7.4) Use ctrl+shift+M to turn on the extension(above the typing bar, all the features should be visible)
+7.5) Click explain using PromptLens
+7.6) Improved prompt
+
+8. Future scope-
+8.1) Personalized prompt suggestions
+8.2) Multi-language support
+8.3) Integration with IDEs
+8.4) Advanced analytics and user insights
+8.5) Support for multiple AI models
+8.6) Compatibility with multiple browsers and mobile app
+
+9. Main objective-
 To bridge the gap between AI capability and user skill by making prompt engineering intuitive, accessible, and learnable through real-time usage.
 
-👤 Author
-
+10.Author-
 Ash M
+Kaush V
 GitHub: https://github.com/Ash26-prog
 
-📄 License
-
+11.License-
 This project is for educational and prototype purposes.
