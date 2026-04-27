@@ -1,34 +1,17 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // PromptLens feedback documents are append-only.
     match /feedback/{docId} {
-      // Signed-in users can create feedback with the expected schema only.
       allow create: if request.auth != null
-        && request.resource.data.keys().hasOnly([
-          'uid',
-          'email',
-          'original_prompt',
-          'refined_prompt',
-          'mode',
-          'rating',
-          'timestamp',
-          'applied_rules'
-        ])
-        && request.resource.data.uid is string
+        && request.resource.data.email == request.auth.token.email
         && request.resource.data.email is string
-        && request.resource.data.original_prompt is string
-        && request.resource.data.refined_prompt is string
-        && request.resource.data.mode is string
         && request.resource.data.rating is int
-        && request.resource.data.timestamp is string
-        && request.resource.data.applied_rules is list;
+        && request.resource.data.rating >= 1
+        && request.resource.data.rating <= 5
+        && request.resource.data.text is string
+        && request.resource.data.timestamp is int;
 
-      // Read access is admin-only using a custom auth claim.
-      allow get, list: if request.auth != null && request.auth.token.admin == true;
-
-      // No client-side mutation after create.
-      allow update, delete: if false;
+      allow read, update, delete: if false;
     }
   }
 }
