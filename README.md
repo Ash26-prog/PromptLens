@@ -19,6 +19,7 @@ b) PromptLens analyzes the input
 c) Applies structured prompt engineering principles and refines it with the help of it's own engine 
 d) Following this, it sends request to Gemini API  
 e) Output-
+
    e.1) Refined prompt  
    e.2) Quality score  
    e.3)Explanation  
@@ -39,13 +40,14 @@ Chrome Identity API
 REST APIs  
 
 5. Security Notes-
+   
 a) Firebase API key is restricted to required APIs only  
 b)Firestore access is controlled via authentication rules  
 c) OAuth Client ID is restricted to required scopes in Google Cloud Console. API key is user-supplied and stored locally in chrome.storage (prototype trade-off,a production build would route through a backend proxy).
 d) Current version uses broad host permissions for prototype to cover across various AI platforms. The production release would support specific domains only .
 
 
-7. Installation process-
+6. Installation process-
 
 a) Clone the repository
 ```bash
